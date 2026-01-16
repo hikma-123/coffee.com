@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hikma's Coffee | Fresh Brews & Cozy Vibes</title>
+    <meta name="description"
+        content="Welcome to Hikma's Coffee — your cozy spot for fresh brews, homemade pastries, and relaxing vibes. Sip. Savor. Smile." />
+    <meta name="keywords" content="Coffee, Café, Hikma Coffee, Specialty Brews, Coffee Shop, Restaurant" />
+    <meta name="author" content="Hikma" />
+
+    <link rel="icon" href="images/coffee-icon.png" type="image/png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-someHash" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="co.css" />
+    <link rel="stylesheet" href="coffee.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="nav" role="banner">
+        <div class="nav-container">
+            <!-- Logo and Clock -->
+            <div class="nav-left">
+                <img src="https://thumbs.dreamstime.com/b/vector-illustration-concept-coffee-logo-brown-beige-background-140081662.jpg"
+                    alt="Hikma's Coffee Logo" class="logo" />
+                <div id="clock" class="clock" aria-live="polite" aria-atomic="true"></div>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu" role="navigation" aria-label="Main menu">
+                <button class="nav-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul id="primary-menu" class="nav-list">
+                    <li><a href="#" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#feedback" class="nav-link">Feedback</a></li>
+                    <li><a href="#order" class="nav-link">Order</a></li>
+                    <li><a href="#special" class="nav-link">Special</a></li>
+                    <li><a href="#team" class="nav-link">Team</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                    <li><a href="#foot" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Theme Toggle Button -->
+            <button class="toggle-theme" aria-pressed="false" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <script>
+        // Clock script
+        function updateClock() {
+            const now = new Date();
+            const time = now.toLocaleTimeString();
+            document.getElementById("clock").textContent = time;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+
+    <!-- Hero Section (Coffee Shop Theme / Professional) -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Start your day with <span>better coffee</span>.</h1>
+            <p>
+                Welcome to <strong>Hikma's Coffee Restaurant. </strong> handcrafted espresso, signature lattes, and
+                freshly baked treats. Sit, sip, and stay a while.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">Explore Menu</a>
+                <a href="#contact" class="btn btn-secondary">Find Us</a>
+            </div>
+
+            <div class="hero-meta">
+                <div class="meta-card">
+                    <strong>Fresh Daily</strong>
+                    <span>Beans & bakes</span>
+                </div>
+                <div class="meta-card">
+                    <strong>7:00 AM</strong>
+                    <span>Open every day</span>
+                </div>
+                <div class="meta-card">
+                    <strong>Pick-Up</strong>
+                    <span>Order & collect</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <div class="image-frame">
+                <!-- Replace with a professional coffee image -->
+                <img src="./ppyy.png" alt="Professional coffee cup on a table" />
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* ===== Reset ===== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        /* ===== Coffee Shop Theme Variables ===== */
+
+        :root {
+            --bg-1: #fff7ef;
+            /* warm cream */
+            --bg-2: #f2e4d6;
+            /* latte */
+            --text: #2a1b13;
+            /* espresso */
+            --muted: #6a4a36;
+            /* mocha */
+            --card: rgba(255, 255, 255, 0.72);
+            --border: rgba(42, 27, 19, 0.12);
+            --accent: #8b5a2b;
+            /* coffee */
+            --accent-2: #c6905a;
+            /* caramel */
+            --accent-3: #5a2f1b;
+            /* dark roast */
+            --shadow: 0 18px 50px rgba(42, 27, 19, 0.16);
+            --shadow-strong: 0 28px 70px rgba(42, 27, 19, 0.26);
+        }
+
+        /* ===== Hero Layout ===== */
+
+        .hero {
+            min-height: 100vh;
+            padding: 5.5rem 8%;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            align-items: center;
+            gap: 4rem;
+            background: radial-gradient(1200px 600px at 12% 18%, rgba(198, 144, 90, 0.25), transparent 55%), radial-gradient(900px 500px at 85% 28%, rgba(91, 47, 27, 0.16), transparent 60%), linear-gradient(135deg, var(--bg-1), var(--bg-2));
+        }
+
+        /* ===== Content ===== */
+
+        .hero-content {
+            max-width: 660px;
+            animation: fadeUp 1s ease forwards;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 10px 16px;
+            margin-bottom: 1.2rem;
+            background: rgba(139, 90, 43, 0.12);
+            color: var(--accent-3);
+            border: 1px solid rgba(139, 90, 43, 0.18);
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-content h1 {
+            font-size: 3.55rem;
+            font-weight: 800;
+            color: var(--text);
+            line-height: 1.05;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content h1 span {
+            background: linear-gradient(45deg, var(--accent-3), var(--accent-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.08rem;
+            color: var(--muted);
+            line-height: 1.75;
+            margin-bottom: 2.1rem;
+            max-width: 58ch;
+        }
+
+        /* ===== Buttons ===== */
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.6rem;
+        }
+
+        .btn {
+            padding: 0.9rem 2.15rem;
+            border-radius: 999px;
+            font-size: 1rem;
+            font-weight: 650;
+            text-decoration: none;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--accent-3), var(--accent));
+            color: #fff;
+            box-shadow: 0 14px 30px rgba(90, 47, 27, 0.36);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 22px 46px rgba(90, 47, 27, 0.48);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.42);
+            color: var(--accent-3);
+            border: 1px solid rgba(90, 47, 27, 0.25);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.62);
+            box-shadow: 0 16px 40px rgba(42, 27, 19, 0.12);
+        }
+
+        /* ===== Meta Cards ===== */
+
+        .hero-meta {
+            display: flex;
+            gap: 0.9rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-card {
+            min-width: 160px;
+            padding: 0.95rem 1.05rem;
+            border-radius: 16px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            box-shadow: 0 14px 34px rgba(42, 27, 19, 0.10);
+            backdrop-filter: blur(12px);
+        }
+
+        .meta-card strong {
+            display: block;
+            font-size: 1.05rem;
+            color: var(--text);
+            letter-spacing: 0.2px;
+        }
+
+        .meta-card span {
+            display: block;
+            margin-top: 0.25rem;
+            font-size: 0.92rem;
+            color: var(--muted);
+        }
+
+        /* ===== Image ===== */
+
+        .hero-image {
+            display: grid;
+            place-items: center;
+            animation: floatImage 7s ease-in-out infinite;
+        }
+
+        .image-frame {
+            width: 380px;
+            height: 500px;
+            padding: 12px;
+            border-radius: 30px;
+            background: linear-gradient(135deg, rgba(198, 144, 90, 0.40), rgba(139, 90, 43, 0.18), rgba(255, 255, 255, 0.40));
+            border: 1px solid rgba(90, 47, 27, 0.18);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 22px;
+            box-shadow: var(--shadow);
+            display: block;
+            filter: saturate(1.05) contrast(1.03);
+        }
+
+        /* ===== Animations ===== */
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floatImage {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-14px);
+            }
+        }
+
+        /* ===== Responsive ===== */
+
+        @media (max-width: 992px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 4.8rem 7%;
+            }
+
+            .hero-content {
+                margin: 0 auto;
+            }
+
+            .hero-buttons,
+            .hero-meta {
+                justify-content: center;
+            }
+
+            .image-frame {
+                width: 320px;
+                height: 430px;
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 4rem 6%;
+                gap: 2.6rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.35rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .image-frame {
+                width: 285px;
+                height: 385px;
+            }
+
+            .meta-card {
+                min-width: 145px;
+            }
+        }
+    </style>
+
+    <!-- about -->
+
+    <section id="about" class="our-story">
+        <div class="overlay">
+            <h1>OUR STORY</h1>
+            <p>
+                At Bean & Bloom, we craft coffee with heart.<br /> From carefully selected farms to hand-roasting<br />
+                in small batches, every cup tells a story of care,<br /> flavor, and community.
+            </p>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <section id="menu" class="menu-section">
+        <h2> MENU </h2>
+        <div class="slider-container">
+            <button class="nav-btn left">&#8592;</button>
+            <div class="cards-wrapper">
+                <div class="menu-card">
+                    <img src="https://img.freepik.com/premium-photo/espresso-coffee-cup-caffeine-maker-generate-ai_98402-87033.jpg"
+                        alt="Espresso">
+                    <h3>Espresso</h3>
+                    <p>Strong, bold coffee with rich aroma and intense flavor.</p>
+                    <div class="card-footer">
+                        <span>Rs. 250</span>
+                        <button>Order Now</button>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="https://img.freepik.com/premium-photo/latte-art-cappuccino_1031776-27667.jpg" alt="Latte">
+                    <h3>Latte</h3>
+                    <p>Creamy milk coffee topped with a light foam layer.</p>
+                    <div class="card-footer">
+                        <span>Rs. 300</span>
+                        <button>Order Now</button>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.9-iv940nT6EBkZ26COh1dgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3.jpg"
+                        alt="Cappuccino">
+                    <h3>Cappuccino</h3>
+                    <p>A perfect balance of espresso, steamed milk, and foam.</p>
+                    <div class="card-footer">
+                        <span>Rs. 280</span>
+                        <button>Order Now</button>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="https://tse1.mm.bing.net/th/id/OIP.BZn1VLI1wIZz5iSOGXnwRQHaHa?w=1536&h=1536&rs=1&pid=ImgDetMain&o=7&rm=3"
+                        alt="Mocha">
+                    <h3>Mocha</h3>
+                    <p>Delicious blend of coffee, chocolate, and steamed milk.</p>
+                    <div class="card-footer">
+                        <span>Rs. 320</span>
+                        <button>Order Now</button>
+                    </div>
+                </div>
+            </div>
+            <button class="nav-btn right">&#8594;</button>
+        </div>
+    </section>
+
+    <section class="menu-section">
+        <div class="slider-container">
+            <button class="nav-btn left">&#8592;</button>
+            <div class="cards-wrapper">
+                <div class="menu-card">
+                    <img src="https://img.freepik.com/premium-photo/slice-cheesecake-with-raspberries-top_759095-7350.jpg"
+                        alt="Cheesecake">
+                    <h3>Cheesecake</h3>
+                    <p>Rich and creamy dessert with a buttery biscuit base.</p>
+                    <div class="card-footer">
+                        <span>Rs. 400</span>
+                        <button>Order Now</button>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="https://img.freepik.com/premium-photo/chocolate-brownie_919652-9846.jpg"
+                        alt="Chocolate Brownie">
+                    <h3>Chocolate Brownie</h3>
+                    <p>Fudgy chocolate brownie with a gooey center.</p>
+                    <div class="card-footer">
+                        <span>Rs. 180</span>
+                        <button>Order Now</button>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="https://cdn.pixabay.com/photo/2023/05/17/11/05/ai-generated-7999826_1280.jpg"
+                        alt="Tiramisu">
+                    <h3>Tiramisu</h3>
+                    <p>Classic Italian dessert layered with coffee and cream.</p>
+                    <div class="card-footer">
+                        <span>Rs. 420</span>
+                        <button>Order Now</button>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="https://cdn.pixabay.com/photo/2024/02/13/19/08/ai-generated-8571705_960_720.jpg"
+                        alt="Donut">
+                    <h3>Donut</h3>
+                    <p>Soft and sweet donut glazed with vanilla icing.</p>
+                    <div class="card-footer">
+                        <span>Rs. 150</span>
+                        <button>Order Now</button>
+                    </div>
+                </div>
+            </div>
+            <button class="nav-btn right">&#8594;</button>
+        </div>
+    </section>
+
+    <!-- Removed duplicate nav-btn script to prevent redeclaration error -->
+
+
+    <!-- Testimonials -->
+    <section id="feedback" class="testimonials">
+        <h2>What our Customers</h2>
+        <div class="testimonial-slider">
+
+            <!-- Card 1 -->
+            <div class="testimonial-card">
+                <img src="https://storage.ws.pho.to/s2/0bee1a40c4a8c85fe35e8a1b103f9f82a0a13533_m.jpeg" alt="Customer"
+                    class="profile-img">
+                <div class="stars">★ ★ ★ ★ ★</div>
+                <h3>As good as <br>advertised</h3>
+                <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit,”</p>
+                <span class="name">Mrs Catherine White</span>
+                <span class="time">44 Hours Ago</span>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="testimonial-card">
+                <img src="https://img.freepik.com/premium-photo/beautiful-girl-woman-fur-coat-positive-portrait_215924-2615.jpg"
+                    alt="Customer" class="profile-img">
+                <div class="stars">★ ★ ★ ★ ★</div>
+                <h3>As good as <br>advertised</h3>
+                <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit,”</p>
+                <span class="name">Mrs Catherine White</span>
+                <span class="time">44 Hours Ago</span>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="testimonial-card">
+                <img src="https://images.playground.com/b2e4a5f260c947bf977a63a77f9d1bfe.jpeg" alt="Customer"
+                    class="profile-img">
+                <div class="stars">★ ★ ★ ★ ☆</div>
+                <h3>As good as <br>advertised</h3>
+                <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit,”</p>
+                <span class="name">Mrs Catherine White</span>
+                <span class="time">44 Hours Ago</span>
+            </div>
+
+        </div>
+
+        <!-- Pagination Dots -->
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+
+    <!-- Order -->
+    <section class="section order" id="order" aria-label="Place your coffee order online">
+        <h2>Order Online</h2>
+        <p>Place your order & we'll have it ready!</p>
+        <form class="order-form" onsubmit="event.preventDefault(); alert('Order placed successfully!');"
+            aria-describedby="order-instructions">
+
+            <label for="drink-select">Select Drink <span aria-hidden="true">*</span></label>
+            <select id="drink-select" name="drink" required>
+                <option value="" disabled selected>Select your drink</option>
+                <option value="cold-coffee">Cold Coffee</option>
+                <option value="hot-coffee">Hot Coffee</option>
+                <option value="hot-milo">Hot Milo</option>
+            </select>
+
+            <label for="addons-select">Add-ons <span aria-hidden="true">*</span></label>
+            <select id="addons-select" name="addons" required>
+                <option value="" disabled selected>Select add-ons</option>
+                <option value="extra-shot">Extra Shot</option>
+                <option value="almond-milk">Almond Milk</option>
+                <option value="whipped-cream">Whipped Cream</option>
+            </select>
+
+            <label for="pickup-time">Pickup Time <span aria-hidden="true">*</span></label>
+            <input id="pickup-time" name="pickupTime" type="time" required aria-describedby="time-help" />
+
+            <small id="time-help">Please choose a pickup time between 8:00 AM and 8:00 PM.</small>
+
+            <button class="btn-primary" type="submit">Place Order</button>
+        </form>
+    </section>
+
+    <script>
+        // Optional: limit time input to between 08:00 and 20:00
+        const timeInput = document.getElementById('pickup-time');
+        timeInput.min = "08:00";
+        timeInput.max = "20:00";
+    </script>
+
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+        <h2>Visit Us</h2>
+        <p>123 Coffee Street, Colombo, Sri Lanka</p>
+        <div class="map"><iframe
+                src="https://maps.google.com/maps?q=colombo&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe></div>
+        <div class="newsletter">
+            <h3>Join Our Coffee Club</h3>
+            <form onsubmit="event.preventDefault(); alert('Thank you for subscribing!')"
+                style="display: flex; justify-content: center; gap: 0.5rem; max-width: 30px; margin: 2rem auto;">
+                <input type="email" placeholder="Enter your email" required
+                    style="padding: 0.6rem 1rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 5px; flex-grow: 1;" />
+            </form>
+            <button class="btn-primary"
+                style="padding: 0.6rem 1.2rem; font-size: 1rem; border-radius: 5px; cursor: pointer;">
+                Subscribe
+            </button>
+
+        </div>
+    </section>
+    <!-- Daily Specials -->
+    <section class="section specials-section" id="special">
+        <h2 class="section-title">Today's Specials</h2>
+        <p class="section-subtitle">Indulge in our handpicked flavors brewed fresh for the day</p>
+
+        <div class="specials-cards">
+            <div class="special-card">
+                <div class="special-img-container">
+                    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=600&q=80"
+                        alt="Mocha Delight">
+                    <span class="badge">New</span>
+                </div>
+                <h3>Mocha Delight</h3>
+                <p>Rich chocolate and coffee combo topped with whipped cream.</p>
+                <div class="price">$4.50</div>
+            </div>
+
+            <div class="special-card">
+                <div class="special-img-container">
+                    <img src="https://img.freepik.com/premium-photo/professional-food-photography-vanilla-latte-with-toppings-ingredients_1329608-6425.jpg"
+                        alt="Vanilla Latte">
+                    <span class="badge">Popular</span>
+                </div>
+                <h3>Vanilla Latte</h3>
+                <p>Light, smooth, and perfectly sweet for your afternoon break.</p>
+                <div class="price">$3.80</div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Our Team -->
+
+    <section class="section team-section" id="team">
+        <h2 class="section-title">Meet Our Team</h2>
+        <p class="section-subtitle">Passionate professionals bringing warmth to every cup</p>
+
+        <div class="team-cards">
+            <div class="team-card">
+                <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Anna - Head Barista">
+                <h3>Anna</h3>
+                <p class="position">Head Barista</p>
+                <p>Crafting smiles one cup at a time.</p>
+                <ul class="team-details">
+                    <li><strong>Experience:</strong> 5 years in specialty coffee</li>
+                    <li><strong>Favorite Drink:</strong> Caramel Macchiato</li>
+                </ul>
+            </div>
+
+            <div class="team-card">
+                <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="James - Manager">
+                <h3>James</h3>
+                <p class="position">Manager</p>
+                <p>Ensuring the best customer experience daily.</p>
+                <ul class="team-details">
+                    <li><strong>Experience:</strong> 10 years in hospitality</li>
+                    <li><strong>Favorite Drink:</strong> Espresso</li>
+                </ul>
+            </div>
+
+            <div class="team-card">
+                <img src="https://randomuser.me/api/portraits/women/46.jpg" alt="Lisa - Barista">
+                <h3>Lisa</h3>
+                <p class="position">Barista</p>
+                <p>Passionate about brewing the perfect cup.</p>
+                <ul class="team-details">
+                    <li><strong>Experience:</strong> 3 years in coffee making</li>
+                    <li><strong>Favorite Drink:</strong> Flat White</li>
+                </ul>
+            </div>
+
+            <div class="team-card">
+                <img src="https://randomuser.me/api/portraits/men/34.jpg" alt="Mark - Barista">
+                <h3>Mark</h3>
+                <p class="position">Barista</p>
+                <p>Dedicated to customer satisfaction.</p>
+                <ul class="team-details">
+                    <li><strong>Experience:</strong> 4 years in the coffee industry</li>
+                    <li><strong>Favorite Drink:</strong> Cold Brew</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+        <h2 style="text-align: center;">Frequently Asked Questions</h2>
+        <div style="max-width: 700px; margin: auto; text-align: left; padding: 20px;">
+
+            <details style="margin-bottom: 20px; border: 1px solid #ddd; border-radius: 10px; padding: 15px;">
+                <summary style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                    <img src="https://img.icons8.com/emoji/48/hot-beverage.png" alt="Coffee Icon"
+                        style="width: 30px; height: 30px;">
+                    <strong>Do you offer vegan options?</strong>
+                </summary>
+                <p style="margin-top: 10px; padding-left: 40px;">Yes, we have almond milk, oat milk, and plant-based
+                    pastries.
+                </p>
+            </details>
+
+
+            <details style="margin-bottom: 20px; border: 1px solid #ddd; border-radius: 10px; padding: 15px;">
+                <summary style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                    <img src="https://img.icons8.com/ios-filled/50/reservation.png" alt="Reservation Icon"
+                        style="width: 30px; height: 30px;">
+                    <strong>Can I reserve a table?</strong>
+                </summary>
+                <p style="margin-top: 10px; padding-left: 40px;">Absolutely! Call us or use our online form to book a
+                    table.
+                </p>
+            </details>
+
+            <details style="border: 1px solid #ddd; border-radius: 10px; padding: 15px;">
+                <summary style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                    <img src="https://img.icons8.com/fluency/48/delivery.png" alt="Delivery Icon"
+                        style="width: 30px; height: 30px;">
+                    <strong>Do you offer delivery?</strong>
+                </summary>
+                <p style="margin-top: 10px; padding-left: 40px;">Yes, delivery is available within Colombo city limits.
+                </p>
+            </details>
+
+        </div>
+    </section>
+
+
+
+    <!-- Blog Preview -->
+    <section class="section" id="blog">
+        <h2>From Our Blog</h2>
+        <div class="cards" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+
+            <div class="card"
+                style="flex: 1 1 280px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; background: #fff;">
+                <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=600&q=80"
+                    alt="Coffee Brewing Tips" style="width: 100%; height: 180px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3>Coffee Brewing Tips</h3>
+                    <p>Discover expert secrets for brewing barista-quality coffee at home using simple tools and
+                        techniques.
+                    </p>
+                    <a href="#" class="btn-primary"
+                        style="margin-top: 10px; display: inline-block; background-color: #6f4e37; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none;">Read
+                        More</a>
+                </div>
+            </div>
+
+            <div class="card"
+                style="flex: 1 1 280px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; background: #fff;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoXmkFM6yjbg6tcTH1Z1xiyJ0ZUn588agO_fzH_Zkif8K12vQ00lGThsjABb2wgHL3Dlc&usqp=CAU"
+                    alt="Origin of Our Beans" style="width: 100%; height: 180px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3>Origin of Our Beans</h3>
+                    <p>Explore the journey of our premium coffee beans from remote farms to your favorite cup.
+                    </p>
+                    <a href="#" class="btn-primary"
+                        style="margin-top: 10px; display: inline-block; background-color: #6f4e37; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none;">Read
+                        More</a>
+                </div>
+            </div>
+
+            <div class="card"
+                style="flex: 1 1 280px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; background: #fff;">
+                <img src="https://lowacidcoffee.com/cdn/shop/articles/benefits_of_coffee_33458e67-2c6d-4808-915a-fe8c30ef3be9.jpg?v=1665454465&width=1100"
+                    alt="Health Benefits" style="width: 100%; height: 180px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3>Health Benefits of Coffee</h3>
+                    <p>Learn how moderate coffee consumption can benefit your health and energize your day.</p>
+                    <a href="#" class="btn-primary"
+                        style="margin-top: 10px; display: inline-block; background-color: #6f4e37; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none;">Read
+                        More</a>
+                </div>
+            </div>
+
+            <!-- New Cards Added -->
+
+            <div class="card"
+                style="flex: 1 1 280px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; background: #fff;">
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80"
+                    alt="Coffee Art" style="width: 100%; height: 180px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3>The Art of Coffee</h3>
+                    <p>Explore the creativity behind beautiful latte art and how it elevates your coffee experience.
+                    </p>
+                    <a href="#" class="btn-primary"
+                        style="margin-top: 10px; display: inline-block; background-color: #6f4e37; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none;">Read
+                        More</a>
+                </div>
+            </div>
+
+            <div class="card"
+                style="flex: 1 1 280px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; background: #fff;">
+                <img src="https://images.unsplash.com/photo-1484981138541-3d074aa97716?auto=format&fit=crop&w=600&q=80"
+                    alt="Sustainable Coffee Farming" style="width: 100%; height: 180px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3>Sustainable Coffee Farming</h3>
+                    <p>Learn how sustainable practices are shaping the future of coffee farming for a greener planet.
+                    </p>
+                    <a href="#" class="btn-primary"
+                        style="margin-top: 10px; display: inline-block; background-color: #6f4e37; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none;">Read
+                        More</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer style="background-color: #baa07b; padding: 40px 20px; text-align: center; border-top: 1px solid #904d00;">
+        <h3 style="font-size: 1.8rem; margin-bottom: 20px; color: #904d00;">Follow Us</h3>
+        <div class="socials" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <a href="#" aria-label="Facebook" target="_blank" rel="noopener">
+                <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook"
+                    style="width: 32px; height: 32px;" />
+            </a>
+            <a href="#" aria-label="Instagram" target="_blank" rel="noopener">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"
+                    style="width: 32px; height: 32px;" />
+            </a>
+            <a href="#" aria-label="Twitter" target="_blank" rel="noopener">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733635.png" alt="Twitter"
+                    style="width: 32px; height: 32px;" />
+            </a>
+            <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"
+                    style="width: 32px; height: 32px;" />
+            </a>
+            <a href="#" aria-label="Pinterest" target="_blank" rel="noopener">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111532.png" alt="Pinterest"
+                    style="width: 32px; height: 32px;" />
+            </a>
+            <a href="#" aria-label="YouTube" target="_blank" rel="noopener">
+                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"
+                    style="width: 32px; height: 32px;" />
+            </a>
+        </div>
+        <p style="margin-top: 30px; font-size: 0.95rem; color: #b54b05;">&copy; 2025 <strong>Hikma's Coffee
+                Restaurant</strong>. All rights reserved.</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="foot" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</button>
+
+    <!-- Modal for image -->
+    <div id="imageModal"
+        style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:9999;justify-content:center;align-items:center;"
+        onclick="this.style.display='none'">
+        <img id="modalImage" src="" style="max-width:90%;max-height:90%;" />
+    </div>
+
+    <script>
+        // Back to top button
+        window.onscroll = function () {
+            document.getElementById("backToTop").style.display = window.scrollY > 300 ? "block" : "none";
+        };
+
+        // Dark mode toggle
+        function toggleTheme() {
+            document.body.classList.toggle("dark");
+        }
+
+        // Image modal
+        function openModal(src) {
+            document.getElementById('modalImage').src = src;
+            document.getElementById('imageModal').style.display = 'flex';
+        }
+
+        // Live clock
+        setInterval(() => {
+            const clock = document.getElementById('clock');
+            const now = new Date();
+            clock.textContent = now.toLocaleTimeString();
+        }, 1000);
+    </script>
+
+
+</body>
+
+</html>
